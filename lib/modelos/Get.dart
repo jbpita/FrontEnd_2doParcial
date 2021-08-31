@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:frontend_2doparcial/modelos/clases/Hotel.dart';
 
 Future<List<Hotel>> get(String string) async {
-  final url = Uri.parse('localhost:8000/api/$string');
+  final url = Uri.parse('http://192.168.1.6:8000/api/${string}');
   var respuesta = await http.get(url);
 
   List<Hotel> hoteles = [];

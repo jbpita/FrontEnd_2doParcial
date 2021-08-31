@@ -14,7 +14,10 @@ class Hoteles extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           print(snapshot.data);
-          return Text("Hola");
+          return GridView.count(
+            crossAxisCount: 2,
+            children: _listHoteles(snapshot.data),
+          );
         } else if (snapshot.hasError) {
           print(snapshot.error);
           return Text("Error");
@@ -36,5 +39,17 @@ class Hoteles extends StatelessWidget {
       },
       separatorBuilder: (BuildContext context, int index) => const Divider(),
     );*/
+  }
+  List<Widget> _listHoteles(List<Hotel> data) {
+    List<Widget> hoteles = [];
+    for (var item in data) {
+      hoteles.add(Card(
+          child: Column(
+        children: [
+          Expanded(child: Text(item.nombre)),
+        ],
+      )));
+    }
+    return hoteles;
   }
 }
