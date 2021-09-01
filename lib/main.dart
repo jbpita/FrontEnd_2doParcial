@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:frontend_2doparcial/modelos/Hoteles.dart';
 import 'package:frontend_2doparcial/modelos/Restaurantes.dart';
 import 'package:frontend_2doparcial/modelos/Hospitales.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: _title,
       home: MyStatefulWidget(),
     );
