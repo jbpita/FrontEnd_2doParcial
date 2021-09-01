@@ -7,7 +7,7 @@ class Hoteles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<List<Hotel>> datos = Get.get('hoteles');
+    Future<List<Hotel>> datos = Get.getHoteles('hoteles');
 
     return FutureBuilder(
       future: datos,
