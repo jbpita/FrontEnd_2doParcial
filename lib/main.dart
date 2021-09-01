@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_2doparcial/modelos/Hoteles.dart';
 import 'package:frontend_2doparcial/modelos/Restaurantes.dart';
+import 'package:frontend_2doparcial/modelos/Hospitales.dart';
 
 void main() => runApp(const MyApp());
 
@@ -74,7 +75,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> with TickerProvider
             child: Hoteles(),
           ),
           Center(
-            child: Text("It's sunny here"),
+            child: Hospitales(),
           ),
           Center(
             child: Restaurantes(),
