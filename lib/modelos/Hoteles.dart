@@ -47,6 +47,15 @@ class Hoteles extends StatelessWidget {
           child: Column(
         children: [
           Expanded(child: Text(item.nombre)),
+          Expanded(child: Row(
+            children:[
+              Icon(
+                Icons.star,
+                color: Colors.blue,
+              ),
+              Text(item.nroEstrellas)
+            ]
+          ))
         ],
       )));
     }
