@@ -15,7 +15,7 @@ class Restaurantes extends StatelessWidget {
           print(snapshot.data);
           return GridView.count(
             crossAxisCount: 2,
-            children: _listRestaurantes(snapshot.data),
+            children: _listRestaurantes(snapshot.data , context),
           );
         } else if (snapshot.hasError) {
           print(snapshot.error);
@@ -39,24 +39,30 @@ class Restaurantes extends StatelessWidget {
       separatorBuilder: (BuildContext context, int index) => const Divider(),
     );*/
   }
-  List<Widget> _listRestaurantes(List<Restaurante> data) {
+  List<Widget> _listRestaurantes(List<Restaurante> data, context) {
     List<Widget> restaurantes = [];
     for (var item in data) {
-      restaurantes.add(Card(
-          child: Column(
-        children: [
-          Expanded(child: Text(item.nombre)),
-          Expanded(child: Row(
-            children:[
-              Icon(
-                Icons.star,
-                color: Colors.blue,
-              ),
-              Text(item.nroEstrellas)
-            ]
-          ))
-        ],
-      )));
+      restaurantes.add(
+        GestureDetector(
+          onTap: () => {Navigator.pushNamed(context, '/vistaItem')},
+          child: Card(
+            child: Column(
+              children: [
+                Expanded(child: Text(item.nombre)),
+                Expanded(child: Row(
+                  children:[
+                    Icon(
+                      Icons.star,
+                      color: Colors.blue,
+                    ),
+                    Text(item.nroEstrellas)
+                  ]
+                ))
+              ],
+            )
+          ) 
+        )
+      );
     }
     return restaurantes;
   }
