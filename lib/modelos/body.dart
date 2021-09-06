@@ -29,12 +29,16 @@ class Body extends StatelessWidget {
                   )
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0 ),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0 ),
                   child: Column(
                     children: <Widget>[
                       Text(
                         element.nombre,
-                        style: TextStyle(color: Colors.white)
+                        style: Theme.of(context).textTheme.headline4.copyWith(
+                          color: Colors.white, 
+                          fontWeight: FontWeight.bold
+                        ),
+                        //style: TextStyle(color: Colors.white)
                       ),
                     ],
                   )
