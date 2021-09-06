@@ -27,18 +27,7 @@ class Hoteles extends StatelessWidget {
         );
       },
     );
-    /* ListView.separated(
-      padding: const EdgeInsets.all(8),
-      itemCount: 1,
-      itemBuilder: (BuildContext context, int index) {
-        return Container(
-          height: 50,
-          //color: ,
-          child: Center(child: Text('Entry ')),
-        );
-      },
-      separatorBuilder: (BuildContext context, int index) => const Divider(),
-    );*/
+
   }
   List<Widget> _listHoteles(List<Hotel> data) {
     List<Widget> hoteles = [];
@@ -47,6 +36,7 @@ class Hoteles extends StatelessWidget {
           child: Column(
         children: [
           Expanded(child: Text(item.nombre)),
+          Expanded(child: Image.network(item.logotipo)),
           Expanded(child: Row(
             children:[
               Icon(
