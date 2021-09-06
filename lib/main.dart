@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+//import 'package:flutter/services.dart';
 import 'package:frontend_2doparcial/modelos/Hoteles.dart';
 import 'package:frontend_2doparcial/modelos/Restaurantes.dart';
 import 'package:frontend_2doparcial/modelos/Hospitales.dart';
-import 'package:frontend_2doparcial/modelos/VistaItem.dart';
 
 void main() => runApp(const MyApp());
 
@@ -18,12 +17,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
-      //home: MyStatefulWidget(),
-      initialRoute: '/',
+      home: MyStatefulWidget(),
+      /*initialRoute: '/',
       routes: {
         '/':  (context) => MyStatefulWidget(),
         '/vistaItem': (context) => VistaItem()
       },
+      */
     );
   }
 }

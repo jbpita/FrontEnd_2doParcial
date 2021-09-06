@@ -1,9 +1,13 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend_2doparcial/modelos/body.dart';
 
 class VistaItem extends StatelessWidget{
-  const VistaItem({Key key}) : super(key: key);
+
+  final element;
+
+  const VistaItem({Key key , this.element}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -20,6 +24,7 @@ class VistaItem extends StatelessWidget{
           onPressed: () => Navigator.pop(context),
         ),
       ),
+      body: Body(element: this.element),
     );
   }
 }

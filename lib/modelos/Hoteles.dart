@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_2doparcial/modelos/VistaItem.dart';
 import './Get.dart' as Get;
 import 'package:frontend_2doparcial/modelos/clases/Hotel.dart';
 
@@ -34,7 +35,14 @@ class Hoteles extends StatelessWidget {
     for (var item in data) {
       hoteles.add(
         GestureDetector(
-          onTap: () => {Navigator.pushNamed(context, '/vistaItem')},
+          onTap: () => {
+            Navigator.push(
+              context, 
+              MaterialPageRoute(
+                builder: (context) => VistaItem(element: item)
+              )
+            )
+          },
           child: Card(
             child: Column(
               children: [
