@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Formulario extends StatelessWidget {
+  const Formulario({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: FormularioRegistro(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Formulario de reserva en hotel'),
       ),
+      body: FormularioRegistro(),
     );
   }
 }
