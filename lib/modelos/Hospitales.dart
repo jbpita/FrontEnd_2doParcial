@@ -15,7 +15,7 @@ class Hospitales extends StatelessWidget {
           print(snapshot.data);
           return GridView.count(
             crossAxisCount: 2,
-            children: _listHospitales(snapshot.data),
+            children: _listHospitales(snapshot.data , context),
           );
         } else if (snapshot.hasError) {
           print(snapshot.error);
@@ -27,24 +27,31 @@ class Hospitales extends StatelessWidget {
       },
     );
   }
-  List<Widget> _listHospitales(List<Hospital> data) {
+  List<Widget> _listHospitales(List<Hospital> data , context) {
     List<Widget> hospitales = [];
     for (var item in data) {
-      hospitales.add(Card(
-          child: Column(
-            children: [
-              Expanded(child: Text(item.nombre)),
-              Expanded(child: Row(
-                  children:[
-                    Icon(
-                      Icons.star,
-                      color: Colors.blue,
-                    ),
-                    Text(item.nroEstrellas)
-                  ]
-              ))
-            ],
-          )));
+      hospitales.add(
+        GestureDetector(
+          onTap: () => {Navigator.pushNamed(context, '/vistaItem')},
+          child: Card(
+            child: Column(
+              children: [
+                Expanded(child: Text(item.nombre)),
+                Expanded(child: Row(
+                    children:[
+                      Icon(
+                        Icons.star,
+                        color: Colors.blue,
+                      ),
+                      Text(item.nroEstrellas)
+                    ]
+                ))
+              ],
+            ),
+            
+          ),
+        )
+      );
     }
     return hospitales;
   }

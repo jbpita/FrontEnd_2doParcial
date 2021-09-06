@@ -34,20 +34,23 @@ class Hoteles extends StatelessWidget {
     for (var item in data) {
       hoteles.add(Card(
           child: Column(
-        children: [
-          Expanded(child: Text(item.nombre)),
-          Expanded(child: Image.network(item.logotipo,)),
-          Expanded(child: Row(
-            children:[
-              Icon(
-                Icons.star,
-                color: Colors.blue,
-              ),
-              Text(item.nroEstrellas)
-            ]
-          ))
-        ],
-      )));
+            children: [
+              Expanded(child: Text(item.nombre)),
+              Expanded(child: Image.network(item.logotipo,)),
+              Expanded(child: Row(
+                children:[
+                  Icon(
+                    Icons.star,
+                    color: Colors.blue,
+                  ),
+                  Text(item.nroEstrellas)
+                ]
+              ))
+            ],
+          ),
+          
+        )
+      );
     }
     return hoteles;
   }
