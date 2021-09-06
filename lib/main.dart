@@ -45,7 +45,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> with TickerProvider
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white70,
+        elevation: 0,
         title: Center(child: const Text('Turis App')),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
+            onPressed: () {},
+          )
+        ],
         bottom: TabBar(
           controller: _tabController,
           tabs: const <Widget>[
