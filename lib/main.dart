@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
+      theme: ThemeData(
+        fontFamily: 'Roboto',
+      ),
       home: MyStatefulWidget(),
       /*initialRoute: '/',
       routes: {

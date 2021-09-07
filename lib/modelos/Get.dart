@@ -12,7 +12,7 @@ Future<List<Hotel>> getHoteles(String string) async {
   List<Hotel> hoteles = [];
   if (respuesta.statusCode == 200) {
     final body = jsonDecode(respuesta.body);
-    print(body);
+    //print(body);
     for (var item in body['datos']) {
         //print(item);
         hoteles.add(Hotel(id: item['id'] as String, nombre: item['nombre'] as String, descripcion: item['descripcion'] as String, ubicacion: item['ubicacion'] as String, telefono: item['telefono'] as String, correo: item['correo'] as String, logotipo: item['logotipo'] as String, fotoGoogle: item['fotoGoogle'], distancia: item['distancia'], nroEstrellas: item['nroEstrellas']));
@@ -31,7 +31,7 @@ Future<List<Restaurante>> getRestaurantes(String string) async {
   List<Restaurante> restaurantes = [];
   if (respuesta.statusCode == 200) {
     final body = jsonDecode(respuesta.body);
-    print(body);
+    //print(body);
     for (var item in body['datos']) {
         //print(item);
         restaurantes.add(Restaurante(id: item['id'] as String, nombre: item['nombre'] as String, descripcion: item['descripcion'] as String, ubicacion: item['ubicacion'] as String, telefono: item['telefono'] as String, correo: item['correo'] as String, logotipo: item['logotipo'] as String, fotoGoogle: item['fotoGoogle'], distancia: item['distancia'], nroEstrellas: item['nroEstrellas']));
@@ -50,7 +50,7 @@ Future<List<Hospital>> getHospitales(String string) async {
   List<Hospital> hospitales = [];
   if (respuesta.statusCode == 200) {
     final body = jsonDecode(respuesta.body);
-    print(body);
+    //print(body);
     for (var item in body['datos']) {
       //print(item);
       hospitales.add(Hospital(id: item['id'] as String, nombre: item['nombre'] as String, descripcion: item['descripcion'] as String, ubicacion: item['ubicacion'] as String, telefono: item['telefono'] as String, correo: item['correo'] as String, logotipo: item['logotipo'] as String, fotoGoogle: item['fotoGoogle'], distancia: item['distancia'], nroEstrellas: item['nroEstrellas']));

@@ -36,45 +36,155 @@ class Body extends StatelessWidget {
                 ),
             ),
           ),
-          Text(
-            this.element.nombre,
-            style: Theme.of(context).textTheme.headline4.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.bold
-            )
-          ),
-          Row(
-            children: <Widget>[
-              Container(
-                width: size.width/2,
-                child:  Column(
+          Container(
+            padding: EdgeInsets.all(12),
+            child: Column(
+              children:  <Widget>[
+                Text(
+                    this.element.nombre,
+                    style: Theme.of(context).textTheme.headline4.copyWith(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold
+                    )
+                ),
+                Row(
                   children: <Widget>[
-                    Text(
-                      this.element.descripcion,
-                      textAlign: TextAlign.left,
+                    Container(
+                      width: size.width/2,
+                      child:  Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0 ),
+                              child: Text(
+                                  this.element.descripcion,
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      fontSize: 14.0,
+                                      height: 1.5
+                                  ),
+                              ),
+
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0 ),
+                            child: Row(
+                              children: <Widget>[
+                                Icon(
+                                  Icons.add_road,
+                                  color: Colors.black54,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    this.element.distancia,
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                          fontSize: 14.0,
+                                          height: 1.5
+                                      ),
+                                    ),
+                                  )
+                              ]
+                            )
+
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0 ),
+                                child:Row(
+                                  children: <Widget>[
+                                    Icon(
+                                        Icons.add_location_alt,
+                                        color: Colors.black54,
+                                    ),
+                                    Expanded(
+                                        child: Text(
+                                          this.element.ubicacion,
+                                          textAlign: TextAlign.justify,
+                                          style: TextStyle(
+                                            fontSize: 14.0,
+                                            height: 1.5,
+
+                                          ),
+                                        ),
+                                    )
+
+                                  ],
+                              )
+
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10.0 ),
+                              child:Row(
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.phone_callback,
+                                    color: Colors.black54,
+                                  ),
+                                  Expanded(
+                                      child: Text(
+                                        this.element.telefono,
+                                        textAlign: TextAlign.justify,
+                                        style: TextStyle(
+                                          fontSize: 14.0,
+                                          height: 1.5,
+                                        ),
+                                      ),
+                                  )
+                                ],
+                              )
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10.0 ),
+                              child:Row(
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.email,
+                                    color: Colors.black54,
+                                  ),
+                                  Text(
+                                    this.element.correo,
+                                    textAlign: TextAlign.justify,
+                                    style: TextStyle(
+                                      fontSize: 14.0,
+                                      height: 1.5,
+                                    ),
+                                  ),
+                                ],
+                              )
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10.0 ),
+                              child: Row(
+                                children:[
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.black54,
+                                  ),
+                                  Text(element.nroEstrellas)
+                                ],
+
+                              )
+
+                          )
+                        ],
+
+                      ),
                     ),
-                    Text(
-                      this.element.distancia,
-                      textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      this.element.ubicacion,
-                      textAlign: TextAlign.left,
+
+                    Expanded(
+                      child: Column(
+                        children: <Widget>[FittedBox(
+                        child: Image.network(element.logotipo , width: size.width/2),
+                        fit: BoxFit.fill,
+                      )]
+    )
+
                     ),
                   ],
 
-                ),
-              ),
+                )
 
-              Expanded(
-                child: FittedBox(
-                  child: Image.network(element.logotipo),
-                  fit: BoxFit.fill,
-                ),
-
-              ),
-            ],
-
+              ],
+            ),
           )
 
         ],

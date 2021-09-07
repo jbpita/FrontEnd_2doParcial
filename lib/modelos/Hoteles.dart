@@ -59,12 +59,13 @@ class Hoteles extends StatelessWidget {
                       )
                   ),
                   Expanded(
+                    child: SizedBox.expand(
                     child: FittedBox(
                       child: Image.network(item.logotipo),
                       fit: BoxFit.fill,
                     ),
 
-                  ),
+                  )),
                   Expanded(child: Row(
                     children:[
                       Icon(

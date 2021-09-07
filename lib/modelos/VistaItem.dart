@@ -12,7 +12,7 @@ class VistaItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white70,
         elevation: 0,
@@ -24,7 +24,9 @@ class VistaItem extends StatelessWidget{
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Body(element: this.element),
+      body:  SingleChildScrollView(
+        child: Body(element: this.element),
+      )
     );
   }
 }
