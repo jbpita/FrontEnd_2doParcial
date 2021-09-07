@@ -44,22 +44,42 @@ class Hoteles extends StatelessWidget {
             )
           },
           child: Card(
-            child: Column(
-              children: [
-                Expanded(child: Text(item.nombre)),
-                Expanded(child: Image.network(item.fotoGoogle)),
-                Expanded(child: Row(
-                  children:[
-                    Icon(
-                      Icons.star,
-                      color: Colors.blue,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0 ),
+              child: Column(
+
+                children: [
+                  Expanded(
+                      child: Text(
+                          item.nombre ,
+                          style: Theme.of(context).textTheme.headline6.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold
+                          )
+                      )
+                  ),
+                  Expanded(
+                    child: FittedBox(
+                      child: Image.network(item.logotipo),
+                      fit: BoxFit.fill,
                     ),
-                    Text(item.nroEstrellas)
-                  ]
-                ))
-              ],
+
+                  ),
+                  Expanded(child: Row(
+                    children:[
+                      Icon(
+                        Icons.star,
+                        color: Colors.blue,
+                      ),
+                      Text(item.nroEstrellas)
+                    ],
+
+                  )
+                  )
+                ],
+              ),
             ),
-          ),
+            )
         )  
       );
     }

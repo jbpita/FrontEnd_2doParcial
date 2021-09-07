@@ -6,11 +6,13 @@ class Formulario extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('Formulario de reserva en hotel'),
       ),
-      body: FormularioRegistro(),
-    );
+      body: SingleChildScrollView(
+          child: FormularioRegistro(),
+      ));
   }
 }
 
@@ -89,7 +91,7 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             decoration: const InputDecoration(
               icon: const Icon(Icons.calendar_today),
               hintText: 'Escriba su fecha de llegada',
-              labelText: 'Check-in',
+              labelText: 'Fecha de llegada',
             ),
             validator: (value) {
               if (value.isEmpty) {
@@ -102,7 +104,7 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             decoration: const InputDecoration(
               icon: const Icon(Icons.calendar_today),
               hintText: 'Escriba su fecha de salida',
-              labelText: 'Check-out',
+              labelText: 'Fecha de salida',
             ),
             validator: (value) {
               if (value.isEmpty) {
