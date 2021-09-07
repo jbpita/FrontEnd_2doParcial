@@ -40,6 +40,18 @@ class Body extends StatelessWidget {
                         ),
                         //style: TextStyle(color: Colors.white)
                       ),
+                      Row(
+                        children: <Widget>[
+                          Icon(
+                              Icons.star,
+                              color: Colors.blue,
+                            ),
+                          Text(this.element.nroEstrellas),
+                          Expanded(
+                            child: Image.network(this.element.logotipo)
+                          )
+                        ],
+                      ),
                     ],
                   )
                 )

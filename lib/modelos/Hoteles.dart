@@ -47,7 +47,7 @@ class Hoteles extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(child: Text(item.nombre)),
-                Expanded(child: Image.network(item.logotipo,)),
+                Expanded(child: Image.network(item.fotoGoogle)),
                 Expanded(child: Row(
                   children:[
                     Icon(
