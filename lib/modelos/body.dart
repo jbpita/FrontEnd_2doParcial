@@ -1,6 +1,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend_2doparcial/modelos/Formulario.dart';
 
 class Body extends StatelessWidget {
 
@@ -172,12 +173,25 @@ class Body extends StatelessWidget {
 
                     Expanded(
                       child: Column(
-                        children: <Widget>[FittedBox(
-                        child: Image.network(element.logotipo , width: size.width/2),
-                        fit: BoxFit.fill,
-                      )]
-    )
-
+                        children: <Widget>[
+                          FittedBox(
+                            child: Image.network(element.logotipo , width: size.width/2),
+                            fit: BoxFit.fill,
+                          ),
+                          const SizedBox(height: 30),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Formulario()
+                                  )
+                              );
+                            },
+                            child: const Text('Reservar'),
+                          ),
+                        ]
+                      )
                     ),
                   ],
 

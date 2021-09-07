@@ -9,6 +9,16 @@ class Formulario extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('Formulario de reserva en hotel'),
+          backgroundColor: Colors.white70,
+          elevation: 0,
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            onPressed: () => Navigator.pop(context),
+          ),
+
       ),
       body: SingleChildScrollView(
           child: FormularioRegistro(),
