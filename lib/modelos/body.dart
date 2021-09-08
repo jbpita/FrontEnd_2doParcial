@@ -9,6 +9,22 @@ class Body extends StatelessWidget {
 
   const Body({Key key , this.element}) : super(key: key);
 
+  Widget esHotel(context){
+    if(this.element.id.split("_")[0] == "hotel"){
+      return ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Formulario()
+                ));
+              },
+              child: const Text('Reservar'),
+              );
+    }
+    return SizedBox(height: 1);
+  }
+
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;
@@ -171,6 +187,7 @@ class Body extends StatelessWidget {
                       ),
                     ),
 
+
                     Expanded(
                       child: Column(
                         children: <Widget>[
@@ -178,18 +195,10 @@ class Body extends StatelessWidget {
                             child: Image.network(element.logotipo , width: size.width/2),
                             fit: BoxFit.fill,
                           ),
+
                           const SizedBox(height: 30),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Formulario()
-                                  )
-                              );
-                            },
-                            child: const Text('Reservar'),
-                          ),
+                          esHotel(context),
+
                         ]
                       )
                     ),

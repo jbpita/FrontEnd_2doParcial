@@ -6,7 +6,7 @@ import 'package:frontend_2doparcial/modelos/clases/Restaurante.dart';
 import 'package:frontend_2doparcial/modelos/clases/Hospital.dart';
 
 Future<List<Hotel>> getHoteles(String string) async {
-  final url = Uri.parse('http://192.168.1.6:8000/api/${string}');
+  final url = Uri.parse('http://192.168.0.110:8000/api/${string}');
   var respuesta = await http.get(url);
 
   List<Hotel> hoteles = [];
@@ -25,7 +25,7 @@ Future<List<Hotel>> getHoteles(String string) async {
 }
 
 Future<List<Restaurante>> getRestaurantes(String string) async {
-  final url = Uri.parse('http://192.168.1.6:8000/api/${string}');
+  final url = Uri.parse('http://192.168.0.110:8000/api/${string}');
   var respuesta = await http.get(url);
 
   List<Restaurante> restaurantes = [];
@@ -44,7 +44,7 @@ Future<List<Restaurante>> getRestaurantes(String string) async {
 }
 
 Future<List<Hospital>> getHospitales(String string) async {
-  final url = Uri.parse('http://192.168.1.6:8000/api/${string}');
+  final url = Uri.parse('http://192.168.0.110:8000/api/${string}');
   var respuesta = await http.get(url);
 
   List<Hospital> hospitales = [];
