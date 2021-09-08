@@ -56,7 +56,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> with TickerProvider
       appBar: AppBar(
         backgroundColor: Colors.white70,
         elevation: 0,
-        title: Center(child: const Text('Turis App')),
+        title: Center(
+          child: Text(
+            'Turis App' , 
+            style: Theme.of(context).textTheme.headline6.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold
+                          )
+          )
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(
