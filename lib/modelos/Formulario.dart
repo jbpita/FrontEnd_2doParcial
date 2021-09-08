@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Formulario extends StatelessWidget {
   const Formulario({Key key}) : super(key: key);
@@ -36,6 +37,19 @@ class FormularioRegistro extends StatefulWidget {
 class FormularioRegistroState extends State<FormularioRegistro> {
   // Permite la validacion del formulario con un identificador unico
   final _formKey = GlobalKey<FormState>();
+  var mapaDatos = new Map<String, dynamic>();
+
+  //Permite el envío de informacion
+  postTest() async {
+    final enlace = 'http://192.168.0.110:8000/api/hoteles/form';
+
+    http.Response response = await http.post(
+      Uri.parse(enlace),
+      body: mapaDatos,
+    );
+
+    print(response.body);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +68,8 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Por favor, ingrese su nombre';
+              } else {
+                mapaDatos['nombre'] = value;
               }
               return null;
             },
@@ -67,6 +83,8 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Por favor, ingrese su correo';
+              } else {
+                mapaDatos['correo'] = value;
               }
               return null;
             },
@@ -80,6 +98,8 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Por favor, ingrese un numero de telefono';
+              } else {
+                mapaDatos['telefono'] = value;
               }
               return null;
             },
@@ -93,6 +113,8 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Por favor, ingrese una cantidad';
+              } else {
+                mapaDatos['personas_alojarse'] = value;
               }
               return null;
             },
@@ -106,6 +128,8 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Por favor, ingrese una fecha valida';
+              } else {
+                mapaDatos['fecha_llegada'] = value;
               }
               return null;
             },
@@ -119,6 +143,8 @@ class FormularioRegistroState extends State<FormularioRegistro> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Por favor, ingrese una fecha valida';
+              } else {
+                mapaDatos['fecha_salida'] = value;
               }
               return null;
             },
@@ -132,6 +158,7 @@ class FormularioRegistroState extends State<FormularioRegistro> {
                   if (_formKey.currentState.validate()) {
                     ScaffoldMessenger.of(context)
                         .showSnackBar(SnackBar(content: Text('Datos enviados correctamente!')));
+                    postTest();
                   }
                 },
               )),
